@@ -1,0 +1,84 @@
+/* setting box sizing to border box to help with sizing and layout
+
+more on the subject: https://www.w3schools.com/cssref/css3_pr_box-sizing.php */
+html {
+  box-sizing: border-box; 
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* externally linking the css file to the index.html file using the <link> element
+
+more on the subject: https://www.w3schools.com/css/css_howto.asp  */
+
+body {
+  background-color: Grayish blue hsl(220, 15%, 55%);
+
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  font-size: 2rem;
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+/* I  started by structuring my HTML without any CSS and prceeded to apply CSS accordingly, I will be using CSS flexbox for the layout.
+
+the card will consit of 3 containers, the card itself, the image section and the content/text section. for my design I will be using 3 identical cards and allow wrapping upon screen resizing, will not be adding media quieries for responsiveness as the challenge does not speciy any further behavior*/
+
+.cardcontainer{
+display: flex;
+flex-flow: row wrap;
+width: 100%;
+justify-content: space-evenly;
+background-color:hsl(212, 45%, 89%);
+}
+
+.cardwrapper{
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-around;
+  border-radius: 5%;
+  background-color: hsl(0, 0%, 100%);
+  width: 20rem;
+  padding: 2%;
+  margin : 100px 0;
+}
+
+.cardimg, .cardcontent {
+  flex: 1 1 auto;
+}
+
+.cardimg{
+width: 100%;
+
+}
+
+.qrimg{
+  max-width: 100%;
+  border-radius: 5%;
+}
+
+.cardcontent{
+  font-family: 'Outfit', sans-serif;
+  text-align: center;
+  margin: 1rem;
+}
+.cardcontenttop{
+ font-weight: 700;
+ font-size: 1.2rem;
+ margin-bottom: 1rem;
+}
+
+.cardcontentbottom{
+  color: hsl(220, 15%, 55%);
+}
